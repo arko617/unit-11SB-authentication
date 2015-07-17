@@ -41,4 +41,5 @@ app.post('/login', function(req, res) {
 app.get('/dogs', function (req, res, next) {
 });
 
+app.listen(3000)
 
