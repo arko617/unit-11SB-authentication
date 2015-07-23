@@ -13,13 +13,35 @@
 </head>
 <body >
   <div class="container" ng-app="loginApp">
-   <div ng-controller="SignUpController as signupCtrl">
-     <form class="form" ng-submit="signupCtrl.register">
+  <div ng-controller="SignUpController as signupCtrl">
 
-       <button type="submit" class="btn btn-default">Sign Up</button>
+  <center> 
+  <br/>
+  <button type="submit" ng-click="signupCtrl.create()" class="btn btn-default">Sign Up</button>
+  <div style="width:20px; border:none; display:inline-block;"></div>
+  <button type="submit" ng-click="signupCtrl.login()" class="btn btn-default">Sign In</button>
+  <br/><br/><br/><br/>
+
+   <div ng-show="signupCtrl.signup">
+     <form class="form" ng-submit="signupCtrl.register()">
+       New Username: <input type="text" class="login" ng-model="signupCtrl.newUsername"/>
+       New Password: <input type="text" class="login" ng-model="signupCtrl.newPassword"/>
+       <br/>
+       <button type="submit" class="btn btn-default">Create</button>
     </form>
    </div>
+
+   <div ng-show="signupCtrl.signin">
+     <form class="form" ng-submit="signupCtrl.getin()">
+       Username: <input type="text" class="login" ng-model="signupCtrl.username"/>
+       Password: <input type="text" class="login" ng-model="signupCtrl.password"/>
+       <br/>
+       <button type="submit" class="btn btn-default">Login</button>
+    </form>
+   </div>
+
+  </center>
   </div>
-  
+  </div>
 </body>
 </html>
